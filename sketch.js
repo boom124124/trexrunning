@@ -9,14 +9,14 @@ var cloudsGroup, cloudImage;
 var obstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4;
 var backgroundImg
 var score=0;
-var jumpSound, collidedSound;
+//var jumpSound, collidedSound;
 
 var gameOver, restart;
 
 
 function preload(){
-  jumpSound = loadSound("sounds/jump.wav")
-  collidedSound = loadSound("sounds/collided.wav")
+  //jumpSound = loadSound("sounds/jump.wav")
+  //collidedSound = loadSound("sounds/collided.wav")
   
   backgroundImg = loadImage("backgroundImg.png")
   sunAnimation = loadImage("sun.png");
@@ -95,7 +95,7 @@ function draw() {
     ground.velocityX = -(6 + 3*score/100);
     
     if((touches.length > 0 || keyDown("SPACE")) && trex.y  >= height-120) {
-      jumpSound.play();
+     //jumpSound.play();
       trex.velocityY = -10;
        touches = [];
     }
@@ -111,7 +111,7 @@ function draw() {
     spawnObstacles();
   
     if(obstaclesGroup.isTouching(trex)){
-        collidedSound.play()
+        //collidedSound.play()
         gameState = END;
     }
   }
